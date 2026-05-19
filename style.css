@@ -1,0 +1,383 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  background: #f5f5f5;
+  color: #111;
+  min-height: 100vh;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 2rem 1rem;
+}
+
+#app {
+  background: #ffffff;
+  border-radius: 16px;
+  border: 1px solid #e0e0e0;
+  padding: 2rem;
+  width: 100%;
+  max-width: 540px;
+}
+
+h1 {
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+  color: #111;
+}
+
+/* Tabs */
+.tabs {
+  display: flex;
+  gap: 6px;
+  margin-bottom: 1.25rem;
+  flex-wrap: wrap;
+}
+
+.tab {
+  background: transparent;
+  border: 1px solid #d0d0d0;
+  border-radius: 8px;
+  padding: 5px 14px;
+  font-size: 13px;
+  cursor: pointer;
+  color: #666;
+  transition: all 0.15s;
+}
+
+.tab:hover {
+  background: #f0f0f0;
+  color: #111;
+}
+
+.tab.active {
+  background: #111;
+  color: #fff;
+  border-color: #111;
+  font-weight: 500;
+}
+
+/* Field labels */
+.field-label {
+  display: block;
+  font-size: 13px;
+  color: #555;
+  margin-bottom: 5px;
+}
+
+.field-wrap {
+  margin-bottom: 1rem;
+}
+
+/* Inputs */
+input[type="text"],
+textarea,
+select {
+  width: 100%;
+  padding: 8px 12px;
+  border: 1px solid #d0d0d0;
+  border-radius: 8px;
+  font-size: 14px;
+  color: #111;
+  background: #fff;
+  outline: none;
+  transition: border-color 0.15s;
+  font-family: inherit;
+}
+
+input[type="text"]:focus,
+textarea:focus,
+select:focus {
+  border-color: #555;
+}
+
+textarea {
+  resize: vertical;
+  min-height: 80px;
+}
+
+/* Size row */
+.size-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 1.25rem;
+}
+
+.size-row label {
+  font-size: 13px;
+  color: #555;
+  white-space: nowrap;
+  min-width: 32px;
+}
+
+input[type="range"] {
+  flex: 1;
+  accent-color: #111;
+  cursor: pointer;
+}
+
+.size-val {
+  font-size: 13px;
+  font-weight: 500;
+  min-width: 44px;
+  color: #111;
+}
+
+/* Color row */
+.color-row {
+  display: flex;
+  gap: 1.5rem;
+  margin-bottom: 1.5rem;
+  flex-wrap: wrap;
+  align-items: flex-end;
+}
+
+.color-field {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.color-field label {
+  font-size: 13px;
+  color: #555;
+}
+
+input[type="color"] {
+  width: 48px;
+  height: 34px;
+  border: 1px solid #d0d0d0;
+  border-radius: 8px;
+  cursor: pointer;
+  padding: 2px;
+  background: none;
+}
+
+.color-field select {
+  width: auto;
+}
+
+/* QR card */
+.qr-card {
+  background: #fafafa;
+  border: 1px solid #e0e0e0;
+  border-radius: 16px;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  min-height: 260px;
+  justify-content: center;
+}
+
+#qr-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#qr-container img,
+#qr-container canvas {
+  border-radius: 4px;
+  display: block;
+}
+
+/* Placeholder */
+.placeholder {
+  color: #aaa;
+  font-size: 14px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.placeholder svg {
+  opacity: 0.35;
+}
+
+/* Actions */
+.actions {
+  display: flex;
+  gap: 8px;
+}
+
+.actions button {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 13px;
+  padding: 7px 16px;
+  border: 1px solid #d0d0d0;
+  border-radius: 8px;
+  background: #fff;
+  color: #111;
+  cursor: pointer;
+  transition: background 0.15s;
+  font-family: inherit;
+}
+
+.actions button:hover {
+  background: #f0f0f0;
+}
+
+/* Meta info */
+.meta {
+  font-size: 12px;
+  color: #999;
+  text-align: center;
+}
+
+/* ── Tablet (max 640px) ── */
+@media (max-width: 640px) {
+  body {
+    padding: 1rem 0.75rem;
+    align-items: flex-start;
+  }
+
+  #app {
+    padding: 1.25rem 1rem;
+    border-radius: 12px;
+  }
+
+  h1 {
+    font-size: 17px;
+    margin-bottom: 1rem;
+  }
+
+  .tabs {
+    gap: 5px;
+    margin-bottom: 1rem;
+  }
+
+  .tab {
+    padding: 6px 12px;
+    font-size: 13px;
+    /* make tabs easier to tap */
+    min-height: 36px;
+  }
+
+  .color-row {
+    gap: 1rem;
+  }
+
+  .color-field select {
+    width: 100%;
+    font-size: 13px;
+  }
+
+  .qr-card {
+    padding: 1.25rem 1rem;
+    min-height: 220px;
+  }
+
+  .actions {
+    flex-direction: row;
+    width: 100%;
+    justify-content: center;
+  }
+
+  .actions button {
+    flex: 1;
+    justify-content: center;
+    padding: 10px 12px;
+    font-size: 14px;
+    min-height: 44px; /* touch-friendly tap target */
+  }
+}
+
+/* ── Mobile (max 400px) ── */
+@media (max-width: 400px) {
+  body {
+    padding: 0.75rem 0.5rem;
+  }
+
+  #app {
+    padding: 1rem 0.875rem;
+    border-radius: 10px;
+  }
+
+  h1 {
+    font-size: 16px;
+  }
+
+  .tab {
+    padding: 6px 10px;
+    font-size: 12px;
+  }
+
+  .size-row {
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  .size-row label {
+    width: 100%;
+  }
+
+  .color-row {
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  .color-field {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+  }
+
+  .color-field label {
+    flex: 1;
+  }
+
+  .color-field select {
+    flex: 2;
+  }
+
+  input[type="text"],
+  textarea,
+  select {
+    font-size: 16px; /* prevents iOS auto-zoom on focus */
+  }
+
+  .qr-card {
+    padding: 1rem 0.75rem;
+    border-radius: 10px;
+  }
+
+  .actions {
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .actions button {
+    width: 100%;
+  }
+}
+
+/* Dark mode */
+@media (prefers-color-scheme: dark) {
+  body { background: #1a1a1a; color: #eee; }
+  #app { background: #242424; border-color: #333; }
+  h1 { color: #eee; }
+  .tab { border-color: #444; color: #aaa; }
+  .tab:hover { background: #333; color: #eee; }
+  .tab.active { background: #eee; color: #111; border-color: #eee; }
+  input[type="text"], textarea, select { background: #2e2e2e; border-color: #444; color: #eee; }
+  input[type="text"]:focus, textarea:focus, select:focus { border-color: #888; }
+  .field-label, .size-row label, .color-field label { color: #aaa; }
+  .size-val { color: #eee; }
+  input[type="color"] { border-color: #444; }
+  .qr-card { background: #1e1e1e; border-color: #333; }
+  .actions button { background: #2e2e2e; border-color: #444; color: #eee; }
+  .actions button:hover { background: #383838; }
+}

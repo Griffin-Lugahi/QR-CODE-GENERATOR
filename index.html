@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>QR Code Generator</title>
+  <link rel="stylesheet" href="style.css" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+</head>
+<body>
+
+  <div id="app">
+    <h1>QR Code Generator</h1>
+
+    <div class="tabs" id="preset-tabs">
+      <button class="tab active" data-preset="url">URL</button>
+      <button class="tab" data-preset="text">Text</button>
+      <button class="tab" data-preset="email">Email</button>
+      <button class="tab" data-preset="phone">Phone</button>
+      <button class="tab" data-preset="wifi">Wi-Fi</button>
+    </div>
+
+    <div id="fields"></div>
+
+    <div class="size-row">
+      <label for="size-slider">Size</label>
+      <input type="range" id="size-slider" min="128" max="300" step="1" value="200" />
+      <span class="size-val" id="size-val">200px</span>
+    </div>
+
+    <div class="color-row">
+      <div class="color-field">
+        <label for="fg-color">Foreground</label>
+        <input type="color" id="fg-color" value="#000000" />
+      </div>
+      <div class="color-field">
+        <label for="bg-color">Background</label>
+        <input type="color" id="bg-color" value="#ffffff" />
+      </div>
+      <div class="color-field">
+        <label for="ec-level">Error correction</label>
+        <select id="ec-level">
+          <option value="L">L — Low (7%)</option>
+          <option value="M" selected>M — Medium (15%)</option>
+          <option value="Q">Q — Quartile (25%)</option>
+          <option value="H">H — High (30%)</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="qr-card">
+      <div id="qr-container">
+        <div class="placeholder">
+          <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="3" height="3"/><rect x="19" y="14" width="2" height="2"/><rect x="14" y="19" width="2" height="2"/><rect x="18" y="18" width="3" height="3"/></svg>
+          <p>Enter content above to generate your QR code</p>
+        </div>
+      </div>
+      <div class="actions" id="actions" style="display:none;">
+        <button id="download-btn">&#8675; Download PNG</button>
+        <button id="copy-btn">&#9647; Copy</button>
+      </div>
+      <div class="meta" id="meta"></div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
